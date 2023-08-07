@@ -1,4 +1,4 @@
-Name			Student ID
+Name			    Student ID
 ---------------		----------------
 Ho Zhi Le		    S10241571F
 Kang Yin Yen		S10255704G
