@@ -83,6 +83,3 @@ def profitloss_function():
         profitloss_summary += (f'[HIGHEST NET PROFIT SURPLUS] DAY: {highest_increment_day}, AMOUNT: USD{highest_increment}\n')
 
     return profitloss_summary
-
-
-print(profitloss_function())

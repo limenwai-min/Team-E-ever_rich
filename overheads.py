@@ -41,5 +41,3 @@ def overhead_function():
 
     # print the highest overhead category and its respective value
     return(f'[HIGHEST OVERHEAD] {highest_overhead}:{highest_expense}%\n')
-
-print(overhead_function())

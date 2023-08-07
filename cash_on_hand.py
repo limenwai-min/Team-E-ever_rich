@@ -95,5 +95,3 @@ def coh_function():
         coh_summary += (f'[HIGHEST CASH SURPLUS] DAY: {highest_increment_day}, AMOUNT: USD{highest_increment}\n')
 
     return coh_summary
-
-print(coh_function())
