@@ -69,17 +69,22 @@ def profitloss_function():
 
 
     # sum up negative differences in net profit
-    sum_negative_profits = 0
-    for difference in netProfit_differences:
-        if difference < 0:
-            sum_negative_profits += difference
+    # sum_negative_profits = 0
+    # for difference in netProfit_differences:
+    #     if difference < 0:
+    #         sum_negative_profits += difference
 
-    # if sum is 0, there are no days with negative profits, and 
-    # profits are always increasing.
-    if sum_negative_profits == 0:
-        profitloss_summary += ('[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY\n')
+    # # if sum is 0, there are no days with negative profits, and 
+    # # profits are always increasing.
+    # if sum_negative_profits == 0:
+    #     profitloss_summary += ('[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY\n')
 
+
+    # if there are no days with negative difference in net profit, 
+    # profit_deficit_days remains empty
+    if profit_deficit_days == []:
         # add day of highest increase in profit and amount to profitloss_summary
+        profitloss_summary += ('[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY\n')
         profitloss_summary += (f'[HIGHEST NET PROFIT SURPLUS] DAY: {highest_increment_day}, AMOUNT: USD{highest_increment}\n')
 
     return profitloss_summary
