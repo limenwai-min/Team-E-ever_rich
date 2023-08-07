@@ -1,11 +1,15 @@
 def coh_function():
+    '''
+    - This function computes the difference in cash on hand if cash on hand on current day is lower than previous day.
+    - If cash on hand is always increasing, the function finds the day and amount the highest increment occurs.
+    - Required paramaters : none
+    '''
     from pathlib import Path
     import csv
 
     # create path to folder containing csv files
     CashOnHand_path = Path.home()/'Team_E'/'csv_reports'/'Cash_on_Hand.csv'
     # CashOnHand_path = Path.home()/'Team_E'/'csv_reports'/'test_CashAlwaysIncrease.csv'
-
 
     # read csv file
     with CashOnHand_path.open(mode='r', encoding='UTF-8', newline='') as file:

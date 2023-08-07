@@ -1,5 +1,11 @@
 def profitloss_function():
 
+    '''
+    - This function computes the difference in net profit if net profit on current day is lower than previous day.
+    - If net profit is always increasing, the function finds the day and amount the highest increment occurs.
+    - Required paramaters : none
+    '''
+
     from pathlib import Path
     import csv
 
