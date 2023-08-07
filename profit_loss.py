@@ -83,8 +83,8 @@ def profitloss_function():
     # if there are no days with negative difference in net profit, 
     # profit_deficit_days remains empty
     if profit_deficit_days == []:
-        # add day of highest increase in profit and amount to profitloss_summary
         profitloss_summary += ('[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY\n')
+        # add day of highest increase in profit and amount to profitloss_summary
         profitloss_summary += (f'[HIGHEST NET PROFIT SURPLUS] DAY: {highest_increment_day}, AMOUNT: USD{highest_increment}\n')
 
     return profitloss_summary

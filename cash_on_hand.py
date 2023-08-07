@@ -57,7 +57,7 @@ def coh_function():
         difference = CashOnHand - previous_CashOnHand
         CashOnHand_differences.append(difference)
 
-        # Append days with cash on hand into list of CashOnHand_deficit_days
+        # Append days with decrease in cash on hand into list of CashOnHand_deficit_days
         if difference < 0:
             CashOnHand_deficit_days.append((day, abs(difference)))
 
@@ -98,8 +98,8 @@ def coh_function():
     # if there are no days with negative difference in cash on hand, 
     # CashOnHand_deficit_days remains empty
     if CashOnHand_deficit_days == []:
-        # add day of highest increase in cash on hand and amount to coh_summary
         coh_summary += ('[NET CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN PREVIOUS DAY\n')
+        # add day of highest increase in cash on hand and amount to coh_summary
         coh_summary += (f'[HIGHEST CASH SURPLUS] DAY: {highest_increment_day}, AMOUNT: USD{highest_increment}\n')
 
     return coh_summary
