@@ -28,7 +28,7 @@ def overhead_function():
     # create variable to store highest overhead category
     highest_overhead = 0
 
-    # create variable to store highest expense
+    # create variable to store highest expense of the overhead category
     highest_expense = 0
 
 
@@ -46,5 +46,3 @@ def overhead_function():
 
     # print the highest overhead category and its respective value
     return(f'[HIGHEST OVERHEAD] {highest_overhead}:{highest_expense}%\n')
-
-print(overhead_function())

@@ -11,8 +11,6 @@ def profitloss_function():
 
     # create path to folder containing csv files
     profitLoss_path = Path.home()/'Team_E'/'csv_reports'/'Profits_and_Loss.csv'
-    # profitLoss_path = Path.home()/'Team_E'/'csv_reports'/'test_ProfitAlwaysIncreasing.csv'
-
 
     # read csv file
     with profitLoss_path.open(mode='r', encoding='UTF-8', newline='') as file:
@@ -27,19 +25,17 @@ def profitloss_function():
             profitLoss_records.append(row)
 
 
-    # Create empty list to store potential days with profit deficits,
-    # and list to store differences between net profit on each day
+    # Create empty list to store potential days with respective profit deficits
     profit_deficit_days = []
-    netProfit_differences = []
 
     # Create variable to store potential 'day with highest increment'
     highest_increment_day = 0
 
-    # assign variable to first 'net profit of previous day'
-    previous_netProfit = int(profitLoss_records[0][4])
-
     # create variable to store potential 'highest increment in net profit'
     highest_increment = 0
+
+    # assign variable to first 'net profit of previous day'
+    previous_netProfit = int(profitLoss_records[0][4])
 
 
     for row in profitLoss_records:
@@ -49,7 +45,6 @@ def profitloss_function():
 
         # Find difference in net profit and append into list of netProfit_differences
         difference = net_profit - previous_netProfit
-        netProfit_differences.append(difference)
 
         # Append days with profit loss into list of profit_deficit_days
         if difference < 0:
@@ -74,7 +69,7 @@ def profitloss_function():
         profitloss_summary += (f"[PROFIT DEFICIT] Day: {day}, AMOUNT: USD{deficit}\n")
 
 
-    # if there are no days with negative difference in net profit, 
+    # if there are no days with negative difference in net profit (profit always increasing), 
     # profit_deficit_days remains empty
     if profit_deficit_days == []:
         profitloss_summary += ('[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY\n')
@@ -82,5 +77,3 @@ def profitloss_function():
         profitloss_summary += (f'[HIGHEST NET PROFIT SURPLUS] DAY: {highest_increment_day}, AMOUNT: USD{highest_increment}\n')
 
     return profitloss_summary
-
-print(profitloss_function())
